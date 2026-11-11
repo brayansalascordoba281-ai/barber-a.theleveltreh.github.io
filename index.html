@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Level Three Barbería: cortes precisos, estilo personal y reservas en línea. Elige tu servicio y agenda tu próxima cita.">
+  <meta property="og:title" content="Level Three Barbería | Tu estilo, a otro nivel">
+  <meta property="og:description" content="Cortes precisos. Estilo propio. Reserva tu próxima cita.">
+  <title>Level Three Barbería · Tu estilo, a otro nivel</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" data-go="inicio" aria-label="Level Three Barbería, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M13 8v32M35 8v32M13 16h22M13 32h22M18 8l17 32M30 8 13 40"/></svg>
+        </span>
+        <span class="brand-copy"><strong>LEVEL <em>THREE</em></strong><small>BARBERÍA · ESTUDIO DE ESTILO</small></span>
+      </a>
+      <div class="header-right">
+        <div class="open-indicator"><span></span><div><b>Tu próximo look comienza aquí</b><small>Reserva tu espacio</small></div></div>
+        <button class="button button-gold header-book" data-go="reservar">Agendar cita <span aria-hidden="true">↗</span></button>
+      </div>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <nav id="nav" aria-label="Navegación principal">
+    <button data-t="inicio" class="on"><i>⌂</i><span>Inicio</span></button>
+    <button data-t="reservar"><i>＋</i><span>Reservar</span></button>
+    <button data-t="galeria"><i>✂</i><span>Cortes</span></button>
+    <button data-t="local"><i>◈</i><span>El local</span></button>
+    <button data-t="mis"><i>▤</i><span>Mis citas</span></button>
+  </nav>
+
+  <main class="page-shell">
+    <section id="inicio" class="on">
+      <div class="hero">
+        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span></span> THE GENTLEMAN'S STUDIO</div>
+          <div class="hl" id="hl" aria-label="Cortes de otro nivel"></div>
+          <p class="hero-sub">No es solo un corte. Es la forma en que te presentas al mundo.</p>
+          <div class="hero-actions">
+            <button class="button button-gold" data-go="reservar">Reserva tu experiencia <span aria-hidden="true">↗</span></button>
+            <button class="text-link" data-go="galeria">Explorar estilos <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="hero-caption"><span class="caption-line"></span><span>DETALLE · TÉCNICA · ACTITUD</span></div>
+        </div>
+        <div class="hero-side-note">LEVEL THREE <span>—</span> BARBERÍA</div>
+      </div>
+
+      <div class="intro-strip">
+        <div><span class="strip-number">01</span><div><b>Tu estilo</b><small>Diseñado para ti</small></div></div>
+        <div><span class="strip-number">02</span><div><b>Manos expertas</b><small>Atención al detalle</small></div></div>
+        <div><span class="strip-number">03</span><div><b>Reserva fácil</b><small>Elige día y hora</small></div></div>
+      </div>
+
+      <div class="ticker"><div class="mqt" id="mq"></div></div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">LO QUE NECESITAS</span><h2>Una experiencia <i>a tu nivel.</i></h2></div>
+        <p>Todo está en los detalles. Encuentra tu servicio, conoce nuestro espacio y reserva sin complicaciones.</p>
+      </div>
+      <div class="tiles" id="tiles"></div>
+
+      <div class="style-feature">
+        <div class="style-feature-copy"><span class="eyebrow">FIRMA LEVEL THREE</span><h2>Tu imagen habla.<br><i>Haz que cuente.</i></h2><p>Un buen corte se nota. La confianza con la que lo llevas, todavía más.</p><button class="button button-outline" data-go="galeria">Ver estilos <span aria-hidden="true">→</span></button></div>
+        <div class="style-feature-image" role="img" aria-label="Interior de barbería con ambiente elegante"><span>PRECISIÓN EN CADA DETALLE</span></div>
+      </div>
+
+      <div class="section-heading compact-heading"><div><span class="eyebrow">INSPIRACIÓN</span><h2>Estilos que <i>trabajamos.</i></h2></div><button class="text-link" data-go="galeria">Ver galería <span aria-hidden="true">→</span></button></div>
+      <div class="slide" id="slide"></div>
+    </section>
+
+    <section id="reservar">
+      <div class="page-intro"><span class="eyebrow">AGENDA TU EXPERIENCIA</span><h1>Reserva tu <i>cita.</i></h1><p>Escoge tu servicio, selecciona el horario que mejor te convenga y nosotros nos encargamos del resto.</p></div>
+      <div id="err" class="msg bad" hidden></div>
+      <div class="booking-layout">
+        <div class="booking-main">
+          <div class="booking-step"><div class="step-heading"><span>01</span><div><h2>Elige tu servicio</h2><p>Encuentra el cuidado ideal para ti.</p></div></div><div class="grid" id="svc"></div></div>
+          <div class="booking-step"><div class="step-heading"><span>02</span><div><h2>Personaliza tu experiencia</h2><p>Agrega extras a tu servicio, si lo deseas.</p></div></div><div class="grid" id="ext"></div></div>
+          <div class="booking-step"><div class="step-heading"><span>03</span><div><h2>Elige tu barbero</h2><p>Selecciona a tu profesional de confianza.</p></div></div><div class="chips" id="brb"></div></div>
+          <div class="booking-step"><div class="step-heading"><span>04</span><div><h2>Selecciona el día</h2><p>Consulta las fechas disponibles.</p></div></div><div class="chips day-chips" id="days"></div></div>
+          <div class="booking-step"><div class="step-heading"><span>05</span><div><h2>Escoge la hora</h2><p>Los horarios se actualizan según disponibilidad.</p></div></div><div class="times" id="times"><span class="mu">Primero elige un día.</span></div></div>
+        </div>
+        <aside class="booking-aside">
+          <div class="form-card">
+            <span class="eyebrow">ÚLTIMO PASO</span><h2>Tus datos</h2><p>Déjanos la información para confirmar tu espacio.</p>
+            <label for="nm">Nombre completo</label><input id="nm" placeholder="Tu nombre" autocomplete="name" maxlength="60">
+            <label for="ph">Número de celular</label><input id="ph" placeholder="Tu celular" inputmode="tel" autocomplete="tel" maxlength="20">
+            <label for="nt">Nota para tu barbero <span>(opcional)</span></label><input id="nt" placeholder="Referencia o detalle del corte" maxlength="120">
+            <div id="sum" class="msg" hidden></div>
+            <button class="button button-gold button-full" id="go">Confirmar reserva <span aria-hidden="true">↗</span></button>
+            <div id="res"></div>
+            <div class="secure-note"><span>✦</span> Tu reserva se gestiona de forma segura.</div>
+          </div>
+          <div class="aside-note"><b>¿Necesitas ayuda?</b><span>Consulta los datos de contacto del local en la sección El local.</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="page-intro"><span class="eyebrow">SERVICIOS LEVEL THREE</span><h1>El cuidado está <i>en los detalles.</i></h1><p>Conoce nuestros servicios y elige el que mejor se adapta a tu estilo.</p></div>
+      <div id="plist" class="price-list"></div><p class="mu price-footnote">Precios expresados en pesos colombianos (COP).</p>
+      <div class="inline-cta"><div><span class="eyebrow">¿LISTO PARA EL CAMBIO?</span><h2>Tu próxima cita te espera.</h2></div><button class="button button-gold" data-go="reservar">Reservar ahora <span>↗</span></button></div>
+    </section>
+
+    <section id="galeria">
+      <div class="page-intro"><span class="eyebrow">INSPIRACIÓN & ESTILO</span><h1>Encuentra tu <i>próximo look.</i></h1><p>Explora algunos estilos y dinos cuál quieres llevar en tu próxima visita.</p></div>
+      <div class="gal" id="glist"></div>
+    </section>
+
+    <section id="promos">
+      <div class="page-intro"><span class="eyebrow">BENEFICIOS ESPECIALES</span><h1>Algo bueno <i>para ti.</i></h1><p>Conoce las promociones disponibles en Level Three.</p></div>
+      <div id="plst" class="promo-list"></div><p class="mu">Consulta las condiciones de cada promoción directamente en el local.</p>
+    </section>
+
+    <section id="local">
+      <div class="page-intro"><span class="eyebrow">CONOCE LEVEL THREE</span><h1>Mucho más que <i>una barbería.</i></h1><p>Un espacio pensado para disfrutar el proceso, cuidar tu imagen y tomarte un momento para ti.</p></div>
+      <div class="local-feature"><div class="local-photo" role="img" aria-label="Espacio interior de barbería"></div><div class="local-copy"><span class="eyebrow">TU ESPACIO</span><h2>Relájate.<br><i>Estás en casa.</i></h2><p>Disfruta de una sala de espera cómoda y un ambiente pensado para que tu visita sea parte de la experiencia.</p><div class="local-perks"><span>◈ Ambiente cómodo</span><span>◈ Zona de videojuegos</span><span>◈ Atención personalizada</span></div></div></div>
+      <div class="local-columns"><div><span class="eyebrow">PARA ACOMPAÑAR</span><h2>Un momento para ti.</h2><p class="mu">Consulta en el local las opciones de bebidas disponibles.</p><div class="beers" id="bev"></div></div><div><span class="eyebrow">ENCUÉNTRANOS</span><h2>Ven a visitarnos.</h2><div id="info"></div></div></div>
+    </section>
+
+    <section id="resenas">
+      <div class="page-intro"><span class="eyebrow">LA EXPERIENCIA HABLA</span><h1>Historias de <i>nuestros clientes.</i></h1><p>Tu opinión nos ayuda a seguir mejorando en cada visita.</p></div>
+      <div id="rsum" class="review-summary"></div>
+      <div class="review-form"><div><span class="eyebrow">COMPARTE TU EXPERIENCIA</span><h2>Cuéntanos cómo te fue.</h2><p class="mu">Nos encanta saber qué piensas.</p></div><div class="review-fields"><label for="rnm">Tu nombre</label><input id="rnm" placeholder="Tu nombre" maxlength="40"><label>Tu calificación</label><div class="chips" id="rst"></div><label for="rtx">Tu comentario</label><input id="rtx" placeholder="Cuéntanos tu experiencia" maxlength="200"><button class="button button-gold button-full" id="rgo">Publicar reseña <span>↗</span></button><p class="mu" id="rmsg"></p></div></div>
+      <div id="rlist" class="review-list"></div>
+    </section>
+
+    <section id="mis">
+      <div class="page-intro"><span class="eyebrow">TU ESPACIO PERSONAL</span><h1>Mis <i>reservas.</i></h1><p>Consulta tus citas guardadas en este dispositivo y revisa tu progreso.</p></div>
+      <div id="loy"></div><div id="mine" class="my-bookings"></div>
+    </section>
+
+    <footer class="site-footer"><div class="footer-brand"><strong>LEVEL <em>THREE</em></strong><span>BARBERÍA · ESTUDIO DE ESTILO</span></div><p>Tu estilo, a otro nivel.</p><button class="text-link" data-go="reservar">Agenda tu próxima visita <span>↗</span></button><small>© <span id="year">2026</span> Level Three Barbería. Todos los derechos reservados.</small></footer>
+  </main>
+
+  <script>
+// Modo de vista previa: contenido de demostración sin servidor ni base de datos.
+(() => {
+  const $ = id => document.getElementById(id);
+  const services = [
+    {id:'clasico',name:'Corte clásico',price:25000,duration:'30 min',icon:'clasico'},
+    {id:'fade',name:'Fade / degradé',price:30000,duration:'45 min',icon:'fade'},
+    {id:'barba',name:'Corte + barba',price:40000,duration:'60 min',icon:'barba'},
+    {id:'vip',name:'Experiencia premium',price:55000,duration:'75 min',icon:'vip'}
+  ];
+  const extras = [
+    {id:'cejas',name:'Diseño de cejas',price:8000,emoji:'✦'},
+    {id:'mascarilla',name:'Mascarilla facial',price:12000,emoji:'◈'},
+    {id:'lavado',name:'Lavado + styling',price:10000,emoji:'⌁'}
+  ];
+  const barbers = ['Cualquiera','Andrés','Mateo','Santiago'];
+  const cop = n => '$' + Number(n).toLocaleString('es-CO');
+  const svgCut = (label, tone, hair) => `<svg viewBox="0 0 320 400" role="img" aria-label="Estilo ${label}"><defs><linearGradient id="bg${tone}" x2="0" y2="1"><stop stop-color="#44433a"/><stop offset="1" stop-color="#171815"/></linearGradient><linearGradient id="skin${tone}" x2="0" y2="1"><stop stop-color="#d4a17d"/><stop offset="1" stop-color="#98664c"/></linearGradient></defs><rect width="320" height="400" fill="url(#bg${tone})"/><circle cx="160" cy="150" r="96" fill="#c6a56b" opacity=".08"/><path d="M65 400c8-95 47-130 95-130s87 35 95 130" fill="#343a35"/><path d="M104 142c0-64 112-64 112 0v82c0 56-27 91-56 91s-56-35-56-91z" fill="url(#skin${tone})"/><path d="${hair}" fill="#171815"/><path d="M112 211q18 11 34 0m28 0q18 11 34 0" stroke="#38251c" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M145 249q15 10 30 0" stroke="#70442f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M114 286q46 24 92 0" stroke="#1b1e1b" stroke-width="17" fill="none" stroke-linecap="round"/><text x="18" y="36" fill="#dfc18a" font-size="10" letter-spacing="3">LEVEL THREE / ${label.toUpperCase()}</text></svg>`;
+  const gallery = [
+    {t:'Fade clásico',h:'M102 142c0-64 116-80 116 4l-8 30c-18-30-81-28-100 0z'},
+    {t:'Low fade',h:'M102 151c0-60 116-73 116 0l-9 18c-18-26-82-24-98 2z'},
+    {t:'Pompadour',h:'M101 150c-8-78 100-105 119-13l-10 34c-21-39-79-49-101-10z'},
+    {t:'Corte + barba',h:'M104 147c-3-62 112-73 112 0l-8 28c-18-28-80-28-98 0z'}
+  ];
+  const SIC = {
+    clasico:'<circle cx="18" cy="46" r="7"/><circle cx="46" cy="46" r="7"/><path d="M22 41L50 10M42 41L14 10"/>',
+    fade:'<rect x="8" y="20" width="48" height="12" rx="3"/><path d="M14 32v16M22 32v16M30 32v16M38 32v16M46 32v16"/>',
+    barba:'<path d="M12 20c0 22 8 34 20 34s20-12 20-34c-6 8-12 10-20 10s-14-2-20-10z"/><path d="M25 42q7 5 14 0"/>',
+    vip:'<path d="M8 46L12 20l14 14 6-18 6 18 14-14 4 26z"/><path d="M10 54h44"/>'
+  };
+  const IC = {
+    r:'<rect x="10" y="14" width="44" height="40" rx="6"/><path d="M10 26h44M22 8v10M42 8v10M24 38l8 8 12-14"/>',
+    p:'<path d="M8 32L32 8h20v20L28 52z"/><circle cx="42" cy="18" r="3"/>',
+    c:SIC.clasico,o:'<path d="M32 6c4 12 16 16 16 32a16 16 0 0 1-32 0c0-8 4-12 8-16 0 6 4 8 6 8-2-8-2-16 2-24z"/>',
+    l:'<rect x="6" y="20" width="52" height="28" rx="12"/><path d="M20 28v12M14 34h12"/><circle cx="42" cy="30" r="2"/><circle cx="48" cy="38" r="2"/>',
+    s:'<path d="M32 6l7 16 17 2-13 12 4 17-15-9-15 9 4-17L8 24l17-2z"/>'
+  };
+
+  $('hl').innerHTML = '<span class="ln">CORTES</span><span class="ln">DE OTRO NIVEL</span>';
+  const ticker = ['FADE','CLÁSICO','BARBA','ESTILO PROPIO','ATENCIÓN AL DETALLE','LEVEL THREE','RESERVA EN LÍNEA','DESDE $25.000'];
+  $('mq').innerHTML = ticker.concat(ticker).map(x=>`<span>${x}</span>`).join('');
+  const tiles = [['reservar','r','Reservar cita','Elige tu hora y tu barbero'],['precios','p','Precios','Servicios desde $25.000'],['galeria','c','Cortes','Mira los estilos'],['promos','o','Promos','Combos y descuentos'],['local','l','Nuestro local','Comodidad y entretenimiento'],['resenas','s','Reseñas','Lo que dicen de nosotros']];
+  $('tiles').innerHTML = tiles.map(([g,i,t,d])=>`<button class="tile" data-go="${g}"><svg viewBox="0 0 64 64">${IC[i]}</svg><b>${t}</b><span>${d}</span></button>`).join('');
+  $('svc').innerHTML = services.map(s=>`<button class="card" data-id="${s.id}"><svg viewBox="0 0 64 64" style="width:43px;height:43px;fill:none;stroke:#c6a56b;stroke-width:1.6">${SIC[s.icon]}</svg><b>${s.name}</b><span class="dur">⏱ ${s.duration}</span><span class="price">${cop(s.price)}</span></button>`).join('');
+  $('ext').innerHTML = extras.map(e=>`<button class="card ex" data-id="${e.id}"><i>${e.emoji}</i><b>${e.name}</b><span class="price">+ ${cop(e.price)}</span></button>`).join('');
+  $('brb').innerHTML = barbers.map((b,i)=>`<button class="chip ${i===0?'sel':''}" data-i="${i}">${b}</button>`).join('');
+  const dates = Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()+i+1);return d;});
+  $('days').innerHTML = dates.map((d,i)=>`<button class="chip" data-d="${d.toISOString().slice(0,10)}">${d.toLocaleDateString('es-CO',{weekday:'short'})}<br><b>${d.getDate()}</b> ${d.toLocaleDateString('es-CO',{month:'short'})}</button>`).join('');
+  $('times').innerHTML = ['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'].map(t=>`<button class="chip" data-t="${t}">${t}</button>`).join('');
+  $('plist').innerHTML = services.map(s=>`<div class="row"><div><b>${s.name}</b><small>${s.duration}</small></div><b>${cop(s.price)}</b></div>`).join('') + extras.map(e=>`<div class="row"><div><b>${e.emoji} ${e.name}</b><small>Servicio adicional</small></div><b>+ ${cop(e.price)}</b></div>`).join('');
+  const cards = gallery.map((g,i)=>`<div class="gi">${svgCut(g.t,i+1,g.h)}<b>${g.t}</b><button class="chip" data-t="${g.t}">Quiero este corte</button></div>`).join('');
+  $('glist').innerHTML = cards; $('slide').innerHTML = gallery.map((g,i)=>`<div class="gi">${svgCut(g.t,i+10,g.h)}<b>${g.t}</b></div>`).join('');
+  $('plst').innerHTML = '<div class="row"><div><b>✦ Combo corte + barba</b><small>Un look completo en una sola visita.</small></div><b>$38.000</b></div><div class="row"><div><b>✦ Martes de estilo</b><small>Beneficio especial en servicios seleccionados.</small></div><b>Pregunta en el local</b></div>';
+  $('bev').innerHTML = [{n:'Agua',i:'◉',d:'Siempre fresca'},{n:'Gaseosa',i:'✦',d:'Pregunta por sabores'},{n:'Café',i:'⌁',d:'Una pausa tranquila'}].map(b=>`<div class="beer"><span class="drink-icon">${b.i}</span><b>${b.n}</b><div class="mu">${b.d}</div></div>`).join('');
+  $('info').innerHTML = '<div class="msg">🕘 Lunes a sábado · 9:00 am – 7:00 pm<br>📍 Dirección por confirmar<br>💬 <a href="#reservar" data-go="reservar">Agenda tu visita</a><br>📸 @levelthreebarberia</div>';
+  $('rsum').innerHTML = '<div class="msg"><b class="stars">★ 5.0</b> · Clientes que valoran cada detalle</div>';
+  $('rlist').innerHTML = '<div class="row"><div><b>Cliente Level Three</b> <span class="stars">★★★★★</span><small>Excelente atención y un acabado muy limpio. Volveré.</small></div></div><div class="row"><div><b>Experiencia premium</b> <span class="stars">★★★★★</span><small>Buen ambiente, puntualidad y mucho cuidado en el corte.</small></div></div>';
+  $('loy').innerHTML = '<div class="msg ok"><b>⭐ Programa Level Three</b><br>Acumula visitas y disfruta beneficios especiales.</div>';
+  $('mine').innerHTML = '<p class="mu">Aquí aparecerán tus reservas cuando agendes una cita.</p>';
+  const year=$('year'); if(year) year.textContent=new Date().getFullYear();
+
+  // Navegación entre vistas.
+  function go(id){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('on',s.id===id));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));window.scrollTo({top:0,behavior:'smooth'});}
+  document.addEventListener('click',e=>{const target=e.target.closest('[data-go]');if(target){e.preventDefault();go(target.dataset.go);}const nav=e.target.closest('#nav button');if(nav)go(nav.dataset.t);});
+  // Selección visual para demostrar la reserva.
+  $('svc').addEventListener('click',e=>{const b=e.target.closest('.card');if(!b)return;document.querySelectorAll('#svc .card').forEach(x=>x.classList.toggle('sel',x===b));});
+  $('ext').addEventListener('click',e=>{const b=e.target.closest('.card');if(b)b.classList.toggle('sel');});
+  ['brb','days','times','rst'].forEach(id=>$(id).addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;$(id).querySelectorAll('.chip').forEach(x=>x.classList.toggle('sel',x===b));}));
+  $('days').addEventListener('click',()=>{$('times').innerHTML=['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'].map(t=>`<button class="chip" data-t="${t}">${t}</button>`).join('');});
+  $('glist').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;$('nt').value='Quiero: '+b.dataset.t;go('reservar');});
+  $('go').addEventListener('click',()=>{const service=document.querySelector('#svc .card.sel');const day=document.querySelector('#days .chip.sel');const time=document.querySelector('#times .chip.sel');if(!service||!day||!time){$('res').innerHTML='<div class="msg bad">Selecciona un servicio, un día y una hora para ver la confirmación de muestra.</div>';return;}const name=$('nm').value.trim()||'Cliente';$('res').innerHTML=`<div class="msg ok">Vista previa: ${name}, tu cita de ${service.querySelector('b').textContent} quedaría seleccionada para ${day.textContent.replace(/\s+/g,' ').trim()} a las ${time.textContent}. Para confirmar reservas reales, ejecuta el servidor del proyecto.</div>`;});
+  $('rgo').addEventListener('click',()=>{$('rmsg').textContent='Gracias por probar esta vista previa. Las reseñas reales se guardan al ejecutar el servidor.';});
+})();
+</script>
+</body>
+</html>
